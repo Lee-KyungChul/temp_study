@@ -1,0 +1,88 @@
+
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Document</title>
+
+</head>
+
+<body>
+
+<ul id="drink">
+
+<li>커피</li>
+
+</ul>
+
+</body>
+
+</html>
+
+—————————————————————————————————————
+
+위 HTML 문서를 이용하여 다음에 문제를 풀어보세요.
+
+(요소를 조작하는 방법은 무엇을 사용해도 좋습니다.)
+
+1. 커피 앞에 ‘콜라’를 삽입하세요
+2. 커피 뒤에 ‘사이다’를 삽입하세요
+3. 만들어진 ‘사이다’를 ‘커피’와 ‘콜라’ 사이로 이동하세요
+4. ‘사이다’를 ‘제로콜라’로 변경하세요
+5. 중간에 위치한 ‘제로콜라’를 삭제하세요
+6. forEach 문을 사용하여 ‘밀키스’, ‘아이스크림’, ‘허브티’를 ‘콜라’ 뒤에 삽입하세요
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <ul id="drink">
+        <li>커피</li>
+    </ul>
+
+    <script>
+        const $drink = document.getElementById('drink');
+        const $li1 = document.createElement('li');
+        $li1.textContent = '콜라';
+        const $li2 = document.createElement('li');
+        $li2.textContent = '사이다';        
+        const $li3 = document.createElement('li');
+        $li3.textContent = '제로콜라';
+
+
+        
+        $drink.insertBefore($li1, $drink.lastElementChild);
+        // $drink.appendChild($li2);
+        $drink.insertBefore($li2, $drink.lastElementChild);
+
+        // $drink.replaceChild($li2, $li3);  < 요거 적용 안되네 ㅜ.ㅜ
+        $drink.removeChild($li2);
+
+        ['밀키스','아이스크림','허브티'].forEach(text => {
+            const $li4 = document.createElement('li')
+            $li4.textContent = text;
+
+            $drink.appendChild($li4);
+        });
+
+    </script>
