@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .lightgray { background: lightgray;}
+        .focused { background-color: lightgreen;}
+        . {font-size: 150%;}
+    </style>
+</head>
+<body>
+    <h1>사용자 입력 양식 이벤트 연습하기</h1>
+
+    <form name="memberjoin">
+
+        <label for="username">이름</label><br>
+        <input type="text" name="username" id="username" value="" size="70" required>
+
+        <br><br>        
+        
+        <label for="username">이메일</label><br>
+        <input type="email" name="email" id="email" value="" size="70" required>
+
+        <br><br>
+
+        <label>성별</label><br>
+        <input type="radio" name="gender" id="male" value="m" checked><label for="male">남자</label>
+        <input type="radio" name="gender" id="female" value="f"><label for="female">여자</label>
+
+        <br><br>
+
+        <label>참여 일자 선택</label><br>
+        <select id="date" name="date" required>
+            <option value="">--날짜 선택--</option>
+            <option value="25-07-01">25-07-01</option>
+            <option value="25-08-01">25-08-01</option>
+            <option value="25-09-01">25-09-01</option>
+            <option value="25-10-01">25-10-01</option>
+            <option value="25-11-01">25-11-01</option>
+        </select>
+
+        <br><br>
+
+        <label>요청 사항</label><br>
+        <textarea name="request" id="request" rows="5" cols="57" 
+        style="resize: none;" required placeholder="요청 사항을 입역하세요" maxlength="500"></textarea><br>
+        <span>0</span>/500자
+
+        <br><br>
+
+        <input type="checkbox" name="checkbox">개인정보 수집에 동의합니다.
+
+        <br><br>
+
+        <button type="submit" name="button" value="신청" style="width: 100px; height: 30px; background-color: lightblue;">신청하기</button>
+    </form>
+
+    <script>
+        // // form 취득하는 방법
+        // console.log(document.forms);
+        // console.log(document.forms.memberjoin);
+        // console.log(document.forms[0]);
+
+        const $form = document.forms.memberjoin;
+
+        // // form 안의 요소를 취득하는 방법
+        // console.log($form.elements);
+        // console.log($form.elements.username);
+        // console.log($form.username);
+
+        const $username = $form.username;
+        const $email = $form.email;
+        // console.log($email.value);
+        // $username.value = '유관순';
+
+        const $gender = $form.gender;
+        // console.log($gender[1].checked);
+        // $gender[1].checked = true;
+
+        const $date = $form.date;
+        // console.log($age.options);
+        // $age.options[2].selected = true;
+        // $age.selectedIndex = 3;
+        // $age.value = '50';
+
+        const $request = $form.request;
+        // console.log($introduce.value);
+        // $introduce.value = '변경';
+    </script>
+
+    <!-- <h3>focus, blur 이벤트</h3>
+
+    <pre>
+        focus : 사용자가 폼 요소를 클릭하거나 tab 키를 눌러 요소로 이동 했을 때 발생하는 이벤트이다.
+        blur : 사용자가 다른 곳을 클릭하거나 tab 키를 눌러 다음 폼 필드로 이동했을 때 발생하는 이벤트이다.
+    </pre> -->
+
+    <script>
+        $username.onfocus = (e) => {
+            e.target.classList.toggle('lightgray');
+        }
+
+        $username.onblur = (e) => {
+            e.target.classList.toggle('lightgray');
+        }
+    </script>
+<!-- 
+    <h3>focusin, focusout 이벤트</h3>
+
+    <pre>
+        focus 이벤트는 해당 입력 필드에서만 동작하고 버블링 되지 않는다.
+        버블링이 필요하다면 focusin, focusout 이벤트를 사용한다.
+    </pre> -->
+
+    <script>
+        $form.addEventListener('focusin', (e) => e.target.classList.add('focused'));
+        $form.addEventListener('focusout', (e) => e.target.classList.remove('focused'));
+    </script>
+
+    <!-- <h3>change 이벤트</h3>
+    <pre>
+        change 이벤트는 요소 변경이 끝나면 발생하는 이벤트이다.
+        select/checkbox/radio 의 경우 선택 값이 변경된 직후 이벤트가 발생하지만,
+        텍스트 입력 요소인 경우 변경 후 포커스를 잃었을 때 이벤트가 발생한다.
+    </pre> -->
+
+    <script>
+        // $username.addEventListener('change', () => alert('이름이 변경되었습니다.'));
+
+        // $email.addEventListener('focusout', (e) => {
+
+
+
+		// var exptext = /^[A-Za-z0-9_\.\-]+@[A-Za-z0-9\-]+\.[A-Za-z0-9\-]+/;
+
+		// 	if(exptext.test($email.value)==false){
+
+		// 	//이메일 형식이 알파벳+숫자@알파벳+숫자.알파벳+숫자 형식이 아닐경우			
+
+		// 	alert("이메일형식이 올바르지 않습니다.");
+
+		// 	// userinput.email.focus();
+
+
+
+        //     return false};
+
+        //     alert("이메일이 변경되었습니다.");
+
+
+        // });
+
+    </script>
+
+    <!-- <h3>input 이벤트</h3>
+    <pre>
+        input 이벤트는 키보드 이벤트와 달리 어떤 방법으로든 값을 변경할 때 발생한다.
+        예를 들어 마우스를 사용하여 글자를 붙여 넣거나, 음성 인식 기능을 사용해서 글자를 입력할 때도 반응한다.
+    </pre> -->
+
+    <script>
+        $request.addEventListener('input', (e) => {
+            let len = e.target.value.trim().length;
+
+            $form.querySelector('span').textContent = len;
+        })
+    </script>
+
+    <!-- <script>
+        const $button = $form.button;
+        $button.onsubmit = function() {
+            let button = this.querySelector('button').value;
+            console.log(keyword);
+            if(!keyword) {
+                alert('검색어를 입력하지 않았습니다');
+                return false;
+            }
+        }
+    </script> -->
+
+</body>
+</html>
