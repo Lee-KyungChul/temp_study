@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>web 실습문제 2</h1>
+    <br>
+
+    <h3>문제1</h3>
+    <input type="numer" name="number">
+    <button id="btn1">클릭</button>
+
+    <script>
+        document.getElementById('btn1').onclick = function() {
+            let number = Number(document.querySelector('input[name=number]').value);
+            alert(`${number} + 10 = ${number + 10}`);
+        }
+    </script>
+
+    <br><br>
+
+    <h3>문제2</h3>
+    <input type="radio" name="engine" id="naver" value="www.naver.com"><label for="">네이버</label><br>
+    <input type="radio" name="engine" id="google" value="www.google.com"><label for="">구글</label><br>
+    <input type="radio" name="engine" id="w3schools" value="www.w3schools.com"><label for="">w3schools</label><br>
+
+    <script>
+    const radios = document.querySelectorAll('input[name="engine"]');
+    radios.forEach(radio => {
+        radio.addEventListener('change', function() {
+            if (this.checked) {
+                window.open("https://" + this.value, "_blank");
+            }
+        });
+    });
+    </script>
+
+</body>
+</html>
