@@ -1,0 +1,59 @@
+250704.html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>web 실습문제 2</h1>
+    <br>
+
+    <h3>문제1</h3>
+    <input type="number" name="number">
+    <button id="btn1">클릭</button>
+
+    <script>
+        document.getElementById('btn1').onclick = function() {
+            let number = Number(document.querySelector('input[name=number]').value);
+            alert(`${number} + 10 = ${number + 10}`);
+        }
+    </script>
+
+    <br><br>
+
+    <h3>문제2</h3>
+    <input type="radio" name="engine" id="naver" value="https://www.naver.com"><label for="">네이버</label><br>
+    <input type="radio" name="engine" id="google" value="https://www.google.com"><label for="">구글</label><br>
+    <input type="radio" name="engine" id="w3schools" value="https://www.w3schools.com"><label for="">w3schools</label><br>
+
+    <script>
+    const radios = document.querySelectorAll('input[name="engine"]');
+    radios.forEach(radio => {
+        radio.addEventListener('change', function() {
+            if (this.checked) {
+                location.href = (this.value);
+            }
+        });
+    });
+    </script>
+
+
+
+    <h3>문제3</h3>
+    <input type="checkbox" name="check" id="chk1" value=""><label for="">Java</label><br>
+    <input type="checkbox" name="check" id="chk2" value=""><label for="">DataBase</label><br>
+    <input type="checkbox" name="check" id="chk3" value=""><label for="">Web</label><br>
+    <button type="submit" name="button" id="btn2" value="" style="">클릭</button>
+
+    <script>
+        document.getElementById('btn2').onclick = () => {
+            const $chk1 = document.querySelectorAll('input[name="check"]');
+            $chk1[0].checked = true;
+        }
+    </script>
+
+
+</body>
+</html>
