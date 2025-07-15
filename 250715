@@ -1,0 +1,55 @@
+package com.ohgiraffers.test;
+
+public class test_250715 {
+
+    public static void main(String[] args) {
+        short snum1 = 20;
+        int inum2 = 30;
+
+        long lnum1 = snum1 + inum2;
+        long lnum2 = snum1 - inum2;
+        long lnum3 = snum1 * inum2;
+        long lnum4 = snum1 / inum2;
+        long lnum5 = snum1 % inum2;
+        
+
+        System.out.println(lnum1);
+        System.out.println(lnum2);
+        System.out.println(lnum3);
+        System.out.println(lnum4);
+        System.out.println(lnum5);
+        System.out.println("");
+        System.out.println("");
+        System.out.println("");
+
+
+        float width = 12.5f;
+        float height = 36.4f;
+
+        float a = width * height;
+        float b = 2*(width + height);
+
+        System.out.println(a);
+        System.out.println(b);
+        System.out.println("");
+        System.out.println("");
+        System.out.println("");
+
+        float c = 80.5f;
+        float d = 50.6f;
+        float e = 70.8f;
+
+        int f = (int) (c + d+ e);
+        int g = (int) (c + d+ e) / 3;
+
+        System.out.println(f);
+        System.out.println(g);
+
+
+
+
+
+
+    }
+}
+
