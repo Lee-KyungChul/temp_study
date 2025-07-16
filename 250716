@@ -1,0 +1,19 @@
+public class exercise250716 {
+    public static void main(String[] args) {
+
+        int num1 = 3;
+        int num2 = 4;
+
+        System.out.println("두 수 중 큰 수는 " + ((num1 > num2) ? num1 : num2) + "입니다.");
+
+
+        int num3 = 40;
+
+        System.out.println((num3 > 60) ?  "합격입니다." : "아쉽지만 불합격입니다.");
+
+
+        int num4 = 5;
+
+        System.out.println(((num4 % 2) == 1) ? "입력하신 수는 홀수입니다." : "입력하신수는 짝수입니다.");
+    }
+}
