@@ -1,0 +1,155 @@
+package com.test;
+
+import java.util.Scanner;
+
+public class test_250717 {
+
+    public static void main(String[] args) {
+
+        Scanner sc = new Scanner(System.in);
+
+        System.out.print("본인의 이름을 입력해 주세요 : ");
+        String name = sc.nextLine();
+
+        System.out.println("===== 문제 7 ====== ");
+        System.out.print("정수를 하나를 입력해 주세요 : ");
+
+        int num1 = sc.nextInt();
+
+        if (num1 > 0) {
+
+            System.out.println("양수다");
+
+        } else {
+            System.out.println(("음수다"));
+        }
+
+        System.out.print("");
+
+
+        System.out.println("===== 문제 8 ====== ");
+        System.out.print("정수를 하나를 입력해 주세요 : ");
+
+        int num2 = sc.nextInt();
+
+        if (num2 % 2 == 0) {
+
+            System.out.println("짝수다");
+
+        } else {
+            System.out.println(("홀수다"));
+        }
+
+        System.out.print("");
+
+
+        System.out.println("===== 문제 9 ====== ");
+        System.out.print("선물 받고 싶은 월을 입력해 주세요 : ");
+        int month = sc.nextInt();
+        System.out.print("선물 받고 싶은 일을 입력해 주세요 : ");
+        int day = sc.nextInt();
+
+        if (month > 0 && month <= 6) {
+            if (day > 0 && day <= 15) {
+                System.out.println(name  + "님의 선물은 배민 쿠폰 입니다.");
+            } else {
+                System.out.println(name + "님의 선물은 사탕입니다.");
+            }
+        }
+
+        if (month > 6 && month <= 12) {
+            if (day >= 16 && day <= 31) {
+                System.out.println(name  + "님의 선물은 스타벅스 쿠폰 입니다.");
+            } else {
+                System.out.println(name + "님의 선물은 사탕입니다.");
+            }
+        }
+
+
+
+        System.out.println("===== 문제 10 ====== ");
+        System.out.print("나이가 어떻게 되세요? : ");
+        int age = sc.nextInt();
+
+        if (age >= 18) {
+            System.out.println("판매 가능합니다.");
+        } else {
+            System.out.println("미성년자는 판매 불가능합니다. 음료 코너에서 골라주세요");
+        }
+
+
+
+        System.out.println("===== 문제 11 ====== ");
+        System.out.print("당첨 번호가 어떻게 되세요? : ");
+        int luckyNum = sc.nextInt();
+
+        if (luckyNum > 0 && luckyNum <= 10) {
+            if (luckyNum % 2 == 0) {
+                System.out.println("짝수네요, 모자 선물입니다!");
+            } else {
+                System.out.println("홀수네요, 인형 선물입니다!");
+            }
+        } else {
+            System.out.println("당첨 번호는 1~10 사이에만 있어요.");
+        }
+
+
+        System.out.println("===== 문제 12 ====== ");
+        System.out.print("성실 점수를 입력해 주세요? : ");
+        int num4 = sc.nextInt();
+        System.out.print("서비스 점수를 입력해 주세요? : ");
+        int num5 = sc.nextInt();
+        System.out.print("미소 점수를 입력해 주세요? : ");
+        int num6 = sc.nextInt();
+
+        int avg = (num4 + num5 + num6) / 3;
+
+        if (avg >=60 ) {
+            if (num4 < 40) {
+                System.out.println("성실 점수가 " + num4 + "으로 과락으로 불합격입니다.");
+            } else if (num5 < 40) {
+                System.out.println("서비스 점수가 " + num5 + "으로 과락으로 불합격입니다.");
+            } else if (num6 < 40) {
+                System.out.println("미소 점수가 " + num6 + "으로 과락으로 불합격입니다.");
+            } else {
+                System.out.println("축합니다. 합격입니다!");
+            }
+
+        } else {
+            System.out.println("평균점수 " + avg + " 미달로 불합격입니다.");
+
+        }
+
+
+
+        System.out.println("===== 문제 13 ====== ");
+        System.out.print("월 급여를 입력해 주세요 : ");
+        int num7 = sc.nextInt();
+        System.out.print("매출액을 입력해 주세요? : ");
+        int num8 = sc.nextInt();
+
+        double bounsRate = 0;
+
+        if (num8 >= 10000000 && num8 < 30000000) {
+            bounsRate = 0.01;
+        } else if (num8 >= 30000000 && num8 < 50000000) {
+            bounsRate = 0.03;
+        } else if (num8 >= 50000000 ) {
+            bounsRate = 0.05;
+        } else {
+            bounsRate = 0;
+        }
+
+        int bonus = (int) (num8 * bounsRate);
+        int totalSal = num7 + bonus;
+
+        System.out.println("++++++++++++++++++++++");
+        System.out.println("매출액 : " + num8);
+        System.out.println("보너스율 : " + (bounsRate * 100) + "%");
+        System.out.println("월급여 : " + num7);
+        System.out.println("보너스 금액 : " + bonus);
+        System.out.println("----------------------");
+        System.out.println("총 급여 : " + totalSal);
+        
+    }
+}
