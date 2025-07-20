@@ -1,0 +1,88 @@
+package com.test;
+
+import java.util.Scanner;
+
+public class test_250720 {
+    public static void main(String[] args) {
+
+        Scanner sc = new Scanner(System.in);
+
+        int sum = 0;
+        for(int i = 1; i <= 100; i++) {
+            sum += i;
+        }
+        System.out.println("[문제 1]");
+        System.out.println("sum = " + sum);
+        System.out.println();
+
+
+
+        System.out.println("[문제 2]");
+        System.out.print("정수를 입력하세요 : ");
+        int num1 = sc.nextInt();
+        int sum1 = 0;
+        for(int i1 = 1; i1 <= num1; i1++) {
+            sum1 += i1;
+        }
+        System.out.println("1부터 " + num1 +"까지의 합 : " + sum1);
+        System.out.println();
+
+
+
+        System.out.println("[문제 3]");
+        for(int i2 = 1; i2 <= 9; i2++) {
+            int x7 = i2 * 7;
+            System.out.println( "7 * " + i2 + " = " + x7);
+        }
+        System.out.println();
+
+
+        System.out.println("[문제 4]");
+        System.out.print("정수를 입력하세요 : ");
+        int num4 = sc.nextInt();
+        int sum4 = 0;
+        for(int i4 = 1; i4 <= num4; i4++) {
+            if (i4 % 2 == 0) {
+                sum4 += i4;
+            }
+        }
+        System.out.println("1부터 " + num4 +"까지 짝수의 합 : " + sum4);
+        System.out.println();
+
+
+        System.out.println("[문제 5]");
+        System.out.print("문자열을 입력하세요 : ");
+        String str5  = sc.nextLine();
+        for(int i5 = 0; i5 < str5.length(); i5++) {
+            char ch5 = str5.charAt(i5);
+            System.out.println(i5 + " : " + ch5);
+            }
+        System.out.println();
+
+
+        System.out.println("[문제 6]");
+        int num6_start = 'a';
+        int num6_last = 'z';
+        for(int i6 = num6_start; i6 <= num6_last; i6++) {
+            char ch6 = (char)i6;
+            System.out.print(ch6);
+        }
+        System.out.println();
+
+
+
+        System.out.println("[문제 7]");
+        System.out.print("정수를 입력하세요 : ");
+        int num7  = sc.nextInt();
+        for(int i7 = 1; i7 <= num7; i7++) {
+            if (i7 % 2 == 1) {
+                System.out.print("토");
+            } else {
+                System.out.print("마");
+            }
+        }
+        System.out.println();
+
+
+    }
+}
