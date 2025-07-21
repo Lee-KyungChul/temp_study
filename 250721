@@ -1,0 +1,30 @@
+import java.util.Scanner;
+
+public class test_250721 {
+    public static void main(String[] args) {
+
+        System.out.println("[문제 8]");
+        int[] num8 = new int[10];
+        for (int i = 0; i < num8.length ; i++) {
+            num8[i] = i + 1;
+            System.out.println(num8[i]);
+        }
+        System.out.println();
+
+
+        System.out.println("[문제 9]");
+        String str9[] = new String[] {"딸기","바나나","복숭아","키위","사과"};
+        Scanner sc = new Scanner(System.in);
+        System.out.print("0부터 4까지의 정수를 입력하세요 : ");
+        int num9 = sc.nextInt();
+
+        if (num9 < 5) {
+            System.out.println(str9[num9]);
+        } else {
+            System.out.println("준비된 과일이 없습니다.");
+        }
+        System.out.println();
+        
+
+    }
+}
