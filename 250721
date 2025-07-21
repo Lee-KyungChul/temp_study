@@ -28,3 +28,75 @@ public class test_250721 {
 
     }
 }
+
+
+
+
+package test_250721;
+
+public class Application {
+    public static void main(String[] args) {
+
+        Calculator calculator = new Calculator();
+
+        calculator.checkMethod();
+
+        int result = calculator.sum1to10();
+        System.out.println("1부터 10까지의 합 : " + result);
+
+        calculator.checkMaxNumber(10, 20);
+
+        int result1 = calculator.sumTwoNumber(10, 20);
+        System.out.println("10과 20의 합은 : " + result1);
+
+        int result2 = calculator.sumTwoNumber(10, 5);
+        System.out.println("10과 5의 차는 : " + result2);
+
+
+    }
+}
+
+
+package test_250721;
+
+public class Calculator {
+
+
+    public void checkMethod() {
+        System.out.println("메소드 호출 확인");
+    }
+
+
+    int sum;
+    public int sum1to10() {
+        for(int i = 1; i <= 10; i++) {
+            sum += i;
+        }
+        return sum;
+    }
+
+    public void checkMaxNumber(int a, int b) {
+        int max;
+        if(a >= b) {
+            System.out.println("두 수 중 큰 수는 " + a + "이다.");
+        } else {
+            System.out.println("두 수 중 큰 수는 " + b + "이다.");
+        }
+    }
+
+
+    public int sumTwoNumber(int a, int b) {
+        int sum;
+        sum = a + b;
+        return sum;
+    }
+
+
+    public int minusTwoNumber(int a, int b) {
+        int sum;
+        sum = a - b;
+        return sum;
+    }
+
+
+}
