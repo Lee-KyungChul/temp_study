@@ -1,0 +1,126 @@
+package com.ohgiraffers.practice02.level01.basic.member.run;
+
+import com.ohgiraffers.practice02.level01.basic.member.model.dto.MemberDTO;
+
+public class Application {
+
+    public static void main(String[] args) {
+        MemberDTO memberDTO = new MemberDTO();
+
+        System.out.println("id : "+ memberDTO.getId());
+        System.out.println("pwd : " + memberDTO.getPwd());
+        System.out.println("neme : " + memberDTO.getName());
+        System.out.println("age : " + memberDTO.getAge());
+        System.out.println("gender : " +  memberDTO.getGender());
+        System.out.println("phone : " +  memberDTO.getPhone());
+        System.out.println("email : " + memberDTO.getEmail());
+
+        memberDTO.setId("usrID");
+        memberDTO.setPwd("passWord");
+        memberDTO.setName("삐니보틀");
+        memberDTO.setAge(19);
+        memberDTO.setGender('M');
+        memberDTO.setPhone("010-1234-5678");
+        memberDTO.setEmail("abc@naver.com");
+
+        System.out.println("변경 후 id : "+ memberDTO.getId());
+        System.out.println("변경 후 pwd : " + memberDTO.getPwd());
+        System.out.println("변경 후 name : " + memberDTO.getName());
+        System.out.println("변경 후 age : " + memberDTO.getAge());
+        System.out.println("변경 후 gender : " +  memberDTO.getGender());
+        System.out.println("변경 후 phone : " +  memberDTO.getPhone());
+        System.out.println("변경 후 email : " + memberDTO.getEmail());
+
+//        System.out.println(memberDTO.getInformation());
+
+    }
+}
+
+
+
+package com.ohgiraffers.practice02.level01.basic.member.model.dto;
+
+public class MemberDTO {
+    private String id;
+    private String pwd;
+    private String name;
+    private int age;
+    private char gender;
+    private String phone;
+    private String email;
+
+    public MemberDTO() {}
+
+    public MemberDTO(String id, String pwd, String name, int age, char gender, String phone, String email) {
+        this.id = id;
+        this.pwd = pwd;
+        this.name = name;
+        this.age = age;
+        this.gender = gender;
+        this.phone = phone;
+        this.email = email;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
+
+    public void setPwd(String pwd) {
+        this.pwd = pwd
+    ;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public void  setAge(int age) {
+        this.age = age;
+    }
+
+    public void setGender(char gender) {
+        this.gender = gender;
+    }
+
+    public void setPhone(String phone) {
+        this.phone = phone;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public String getId() {
+        return id;
+    }
+
+    public String getPwd() {
+        return pwd;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public int getAge() {
+        return age;
+    }
+
+    public char getGender() {
+        return gender;
+    }
+
+    public String getPhone() {
+        return phone;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public String  getInformation() {
+        return "MemberDTO [id= " + this.id + ", pwd" + this.pwd + ", name" + this.name +
+                ", age" + this.age + ", gender" + this.gender + ", phone" + this.phone + ", eamil" + this.email +"]";
+    }
+
+}
